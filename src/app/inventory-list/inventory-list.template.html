@@ -1,69 +1,115 @@
-<div class="container">
-        <div class="col-md-2">
-                <!--Sidebar content-->
-          
-                Search: <input ng-model="$ctrl.query" />
-                <p>
-                        Sort by:
-                        <select ng-model="$ctrl.orderProp">
-                          <option value="description">Description</option>
-                          <option value="location">Location</option>
-                        </select>
-                      </p>          
-              </div>
-        <!-- ng-controller="InventoryListController" -->
-    <form ng-submit="submit()"  id="new-item" class="new-item" >
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label>Serial Number</label>
-                    <input type="text" ng-model="serialnum" class="form-control" id="serial-num" required>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label >Description</label>
-                    <input type="text" ng-model="description" class="form-control" id="desc" required>
-                </div>
+<div class="pimg1">
+    <div class="container">
+        <span class="border">
+            <h2>Contact Topgolf
+                <span>Swing Suite</span>
+            </h2>
+            <p class="section-intro">We'd love to hear from you! Fill out this form to learn more about playing at an existing Topgolf Swing Suite
+                location, or request info about partnering with us for future locations.</p>
+        </span>
+        <div class="section-dark">
+            <div class="container">
+                <form ng-submit="submit()" id="new-item" class="new-item">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Serial Number</label>
+                                <input type="text" ng-model="serialnum" class="form-control" id="serial-num" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Description</label>
+                                <input type="text" ng-model="description" class="form-control" id="desc" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Location</label>
+                                <input type="text" ng-model="location" class="form-control" id="loc" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>RFID Num</label>
+                                <input type="text" ng-model="rfidnum" class="form-control" id="rfidnum" required>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                    <button type="submit" class="submit-button" id="addButton2">Submit</button>
+                </form>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label>Location</label>
-                    <input type="text" ng-model="location" class="form-control" id="loc" required>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label>RFID Num</label>
-                    <input type="text" ng-model="rfidnum" class="form-control" id="rfidnum"required>
-                </div>
-            </div>
-        </div> <!-- row -->
-        <button type="submit" class="submit-button" id="addButton2">Submit</button>
-    </form>
-  </div> <!-- container -->
-  </section>
-  </div> <!-- container -->
-  
-  <table class="table">
-    <thead>
-        <tr>
-            <th>Transaction Number</th>
-            <th>Serial Number</th>
-            <th>Product Description</th>
-            <th>Location</th>
-            <th>RFID Tag</th>
-        </tr>
-    </thead>
-    <tbody id="tableBody">
-        <tr ng-repeat="item in inventory | filter: $ctrl.query | orderBy:$ctrl.orderProp">
-            <td>{{item.transactionNum}}</td>
-            <td>{{item.serialnum}}</td>
-            <td>{{item.description}}</td>
-            <td>{{item.location}}</td>
-            <td>{{item.rfidnum}}</td>
-        </tr>
-    </tbody>
-  </table>
+
+    </div>
+    <div class="container">
+        <h2>Current Inventory</h2>
+        <div class="col-md-2">
+            
+
+            Search:
+            <input ng-model="$ctrl.query" />
+            <p>
+                Sort by:
+                <select ng-model="$ctrl.orderProp">
+                    <option value="description">Description</option>
+                    <option value="location">Location</option>
+                </select>
+            </p>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Transaction Number</th>
+                    <th>Serial Number</th>
+                    <th>Product Description</th>
+                    <th>Location</th>
+                    <th>RFID Tag</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr ng-repeat="item in inventory | filter: $ctrl.query | orderBy:$ctrl.orderProp">
+                    <td>{{item.transactionNum}}</td>
+                    <td>{{item.serialnum}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.location}}</td>
+                    <td>{{item.rfidnum}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container">
+    <section class="section section-dark">
+        <h2>Section two</h2>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti quas nam accusantium rerum in veniam itaque quae fugiat
+        et odit quibusdam nisi, iusto impedit ad culpa aspernatur vero. At, dolorem.
+    </section>
+</div>
+
+<div class="pimg3">
+</div>
+
+<div class="container">
+    <section class="section section-dark">
+        <h2>Section three</h2>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis saepe, voluptate magnam eaque, dicta possimus aut
+        id dolorem corrupti nulla ea animi? Quos laborum illo nemo, velit exercitationem eligendi veniam.
+    </section>
+</div>
+
+<div class="pimg1">
+    <div class="container">
+        <h2>yay</h2>
+    </div>
+</div>
+
+
+
+
+
+    
+

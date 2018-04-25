@@ -27,15 +27,26 @@ angular.
                     description: 'TaylorMade M3 Driver',
                     location: 'warehouse',
                     rfidnum: 'ec7d4a'
+                },
+                {
+                    transactionNum: '4',
+                    serialnum: '42122',
+                    description: 'Titleist Golf Glove',
+                    location: 'Parsippany,NJ',
+                    rfidnum: '141645'          
+                }, {
+                    transactionNum: '5',
+                    serialnum: '21984',
+                    description: 'Footjoy Golf Shoes',
+                    location: 'warehouse',
+                    rfidnum: '427425'
                 }
+                
             ];
-            console.log('inside controller');
-            var transactionNum = $scope.inventory.length + 1;
-            
+           
             $scope.submit = function(){
-                console.log('inside function');
                 $scope.inventory.push({
-                    transactionNum: transactionNum,
+                    transactionNum: $scope.inventory.length + 1,
                     serialnum: $scope.serialnum,
                     description: $scope.description,
                     location: $scope.location,
@@ -48,7 +59,7 @@ angular.
                 $scope.rfidnum = '';
             }
 
-            this.orderProp = 'transactionNum';
+            // this.orderProp = 'transactionNum';
 
         }]
 });
