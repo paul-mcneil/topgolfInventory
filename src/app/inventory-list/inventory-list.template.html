@@ -1,16 +1,17 @@
 <div class="container">
-    <form id="new-item" class="new-item">
+        <!-- ng-controller="InventoryListController" -->
+    <form ng-submit="submit()"  id="new-item" class="new-item" >
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group">
                     <label>Serial Number</label>
-                    <input type="text" class="form-control" id="serial-num" required>
+                    <input type="text" ng-model="serialnum" class="form-control" id="serial-num" required>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group">
                     <label >Description</label>
-                    <input type="text" class="form-control" id="desc" required>
+                    <input type="text" ng-model="description" class="form-control" id="desc" required>
                 </div>
             </div>
         </div>
@@ -18,13 +19,13 @@
             <div class="col-sm-6">
                 <div class="form-group">
                     <label>Location</label>
-                    <input type="text" class="form-control" id="loc" required>
+                    <input type="text" ng-model="location" class="form-control" id="loc" required>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group">
                     <label>RFID Num</label>
-                    <input type="text" class="form-control" id="rfidnum"required>
+                    <input type="text" ng-model="rfidnum" class="form-control" id="rfidnum"required>
                 </div>
             </div>
         </div> <!-- row -->
@@ -44,7 +45,7 @@
         </tr>
     </thead>
     <tbody id="tableBody">
-        <tr ng-repeat="item in $ctrl.inventory">
+        <tr ng-repeat="item in inventory">
             <td>{{item.serialnum}}</td>
             <td>{{item.description}}</td>
             <td>{{item.location}}</td>

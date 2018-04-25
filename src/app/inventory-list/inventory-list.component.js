@@ -5,8 +5,10 @@ angular.
     module('inventoryList').
     component('inventoryList', {
         templateUrl: 'app/inventory-list/inventory-list.template.html',
-        controller: function InventoryListController(){
-            this.inventory = [
+        controller: ['$scope', function InventoryListController($scope){
+            // var self = this;
+
+            $scope.inventory = [
                 {
                     serialnum: 'Nexus S',
                     description: 'Fast just got faster with Nexus S.',
@@ -21,8 +23,21 @@ angular.
                     serialnum: 'MOTOROLA XOOM™',
                     description: 'The Next, Next Generation tablet.',
                     location: 'warehouse',
-                    rfidnum: '123sadfafv46'
+                    rfidnum: 'ec7d4a'
                 }
             ];
-        }
+            console.log('inside controller');
+            $scope.submit = function(){
+                console.log('inside function');
+                $scope.inventory.push({
+                    serialnum: $scope.serialnum,
+                    description: $scope.description,
+                    location: $scope.location,
+                    rfidnum: $scope.rfidnum
+                });
+            }
+
+
+
+        }]
 });
