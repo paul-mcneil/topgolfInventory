@@ -10,16 +10,19 @@ angular.
 
             $scope.inventory = [
                 {
+                    transactionNum: '1',
                     serialnum: '111111',
                     description: 'TaylorMade RBZ Black',
                     location: 'Parsippany,NJ',
                     rfidnum: 'e8b2eb'
                 }, {
+                    transactionNum: '2',
                     serialnum: '351987',
                     description: '12 Pack Titleist AVX Golf Balls',
                     location: 'Parsippany,NJ',
                     rfidnum: '123fasd346'          
                 }, {
+                    transactionNum: '3',
                     serialnum: '5142009',
                     description: 'TaylorMade M3 Driver',
                     location: 'warehouse',
@@ -27,9 +30,12 @@ angular.
                 }
             ];
             console.log('inside controller');
+            var transactionNum = $scope.inventory.length + 1;
+            
             $scope.submit = function(){
                 console.log('inside function');
                 $scope.inventory.push({
+                    transactionNum: transactionNum,
                     serialnum: $scope.serialnum,
                     description: $scope.description,
                     location: $scope.location,
@@ -42,7 +48,7 @@ angular.
                 $scope.rfidnum = '';
             }
 
-
+            this.orderProp = 'transactionNum';
 
         }]
 });

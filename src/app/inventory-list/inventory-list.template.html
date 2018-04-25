@@ -3,7 +3,13 @@
                 <!--Sidebar content-->
           
                 Search: <input ng-model="$ctrl.query" />
-          
+                <p>
+                        Sort by:
+                        <select ng-model="$ctrl.orderProp">
+                          <option value="description">Description</option>
+                          <option value="location">Location</option>
+                        </select>
+                      </p>          
               </div>
         <!-- ng-controller="InventoryListController" -->
     <form ng-submit="submit()"  id="new-item" class="new-item" >
@@ -44,6 +50,7 @@
   <table class="table">
     <thead>
         <tr>
+            <th>Transaction Number</th>
             <th>Serial Number</th>
             <th>Product Description</th>
             <th>Location</th>
@@ -51,7 +58,8 @@
         </tr>
     </thead>
     <tbody id="tableBody">
-        <tr ng-repeat="item in inventory | filter: $ctrl.query">
+        <tr ng-repeat="item in inventory | filter: $ctrl.query | orderBy:$ctrl.orderProp">
+            <td>{{item.transactionNum}}</td>
             <td>{{item.serialnum}}</td>
             <td>{{item.description}}</td>
             <td>{{item.location}}</td>
