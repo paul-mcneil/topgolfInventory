@@ -10,18 +10,18 @@ angular.
 
             $scope.inventory = [
                 {
-                    serialnum: 'Nexus S',
-                    description: 'Fast just got faster with Nexus S.',
+                    serialnum: '111111',
+                    description: 'TaylorMade RBZ Black',
                     location: 'Parsippany,NJ',
-                    rfidnum: '12346'
+                    rfidnum: 'e8b2eb'
                 }, {
-                    serialnum: 'Motorola XOOM™ with Wi-Fi',
-                    description: 'The Next, Next Generation tablet.',
+                    serialnum: '351987',
+                    description: '12 Pack Titleist AVX Golf Balls',
                     location: 'Parsippany,NJ',
                     rfidnum: '123fasd346'          
                 }, {
-                    serialnum: 'MOTOROLA XOOM™',
-                    description: 'The Next, Next Generation tablet.',
+                    serialnum: '5142009',
+                    description: 'TaylorMade M3 Driver',
                     location: 'warehouse',
                     rfidnum: 'ec7d4a'
                 }
@@ -35,6 +35,11 @@ angular.
                     location: $scope.location,
                     rfidnum: $scope.rfidnum
                 });
+
+                $scope.serialnum ='';
+                $scope.description = '';
+                $scope.location = '';
+                $scope.rfidnum = '';
             }
 
 

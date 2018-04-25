@@ -1,4 +1,10 @@
 <div class="container">
+        <div class="col-md-2">
+                <!--Sidebar content-->
+          
+                Search: <input ng-model="$ctrl.query" />
+          
+              </div>
         <!-- ng-controller="InventoryListController" -->
     <form ng-submit="submit()"  id="new-item" class="new-item" >
         <div class="row">
@@ -45,7 +51,7 @@
         </tr>
     </thead>
     <tbody id="tableBody">
-        <tr ng-repeat="item in inventory">
+        <tr ng-repeat="item in inventory | filter: $ctrl.query">
             <td>{{item.serialnum}}</td>
             <td>{{item.description}}</td>
             <td>{{item.location}}</td>
