@@ -34,14 +34,7 @@ angular.
                     description: 'Titleist Golf Glove',
                     location: 'Parsippany,NJ',
                     rfidnum: '141645'          
-                }, {
-                    transactionNum: '5',
-                    serialnum: '21984',
-                    description: 'Footjoy Golf Shoes',
-                    location: 'warehouse',
-                    rfidnum: '427425'
                 }
-                
             ];
            
             $scope.submit = function(){
